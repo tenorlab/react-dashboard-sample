@@ -17,7 +17,7 @@ import {
 // other static widgets
 import { WidgetRecentPaymentInfo } from './other-widgets/WidgetRecentPaymentInfo'
 
-import { getWidgetsManifestUrl } from '@/utils'
+// import { getWidgetsManifestUrl } from '@/utils'
 
 const bundledWidgetsSrcPath = '/src/bundled-widgets'
 const asyncWidgetsSrcPath = '/src/async-widgets'
@@ -85,7 +85,7 @@ export const getWidgetCatalog = async (user: any | null): Promise<TDashboardWidg
   catalogMapEntries.push(...pluginEntries)
 
   // E. Optional: Remote discovery of -pre-built widgets hosted on a CDN
-  const manifestUrl = getWidgetsManifestUrl()
+  /*const manifestUrl = getWidgetsManifestUrl()
   if (manifestUrl.length > 0) {
     const remoteResponse = await remoteWidgetDiscovery(manifestUrl)
     if (!remoteResponse.message) {
@@ -101,7 +101,7 @@ export const getWidgetCatalog = async (user: any | null): Promise<TDashboardWidg
     console.error(
       `manifestUrl (VITE_WIDGETS_MANIFEST_URL) not set. Skipping remote widget discovery`,
     )
-  }
+  }*/
 
   return new Map(catalogMapEntries)
 }
