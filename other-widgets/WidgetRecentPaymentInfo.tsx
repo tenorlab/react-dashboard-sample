@@ -7,22 +7,14 @@ import {
 import type {
   IDashboardWidget,
   IDashboardWidgetProps,
-  TDashboardWidgetKey,
 } from '@tenorlab/react-dashboard'
-
-const widgetKey: TDashboardWidgetKey = 'WidgetRecentPaymentInfo' as const
 
 export function WidgetRecentPaymentInfo(props: IDashboardWidgetProps): IDashboardWidget {
   return (
     <DashboardWidgetBase
-      widgetKey={widgetKey}
+      {...props}
+      widgetKey="WidgetRecentPaymentInfo"
       title="Recent Payments"
-      parentWidgetKey={props.parentWidgetKey}
-      index={props.index}
-      maxIndex={props.maxIndex}
-      isEditing={props.isEditing}
-      onRemoveClick={props.onRemoveClick}
-      onMoveClick={props.onMoveClick}
     >
       <WrapperColumnContent>
         <WrapperColumnContentListItem>
